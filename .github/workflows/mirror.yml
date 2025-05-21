@@ -1,0 +1,22 @@
+name: Mirror to Friend Repo
+
+on:
+  push:
+    branches:
+      - main  # Change if your default branch is different
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main repository
+        uses: actions/checkout@v3
+
+      - name: Push to friend repository
+        run: |
+          git config --global user.name "baksho"
+          git config --global user.email "6323752+baksho@users.noreply.github.com"
+
+          git remote add mirror https://x-access-token:${{ secrets.MIRROR_TOKEN }}@github.com/friend-username/repo-name.git
+          git push mirror main
