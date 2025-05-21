@@ -18,5 +18,5 @@ jobs:
           git config --global user.name "baksho"
           git config --global user.email "6323752+baksho@users.noreply.github.com"
 
-          git remote add mirror https://x-access-token:${{ secrets.MIRROR_TOKEN }}@github.com/friend-username/repo-name.git
+          git remote add mirror https://x-access-token:${{ secrets.MIRROR_TOKEN }}@github.com/sumitgargesh/DEMON-D.git
           git push mirror main
